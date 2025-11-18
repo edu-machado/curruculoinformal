@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eduardo Machado — Currículo Informal</title>
+  <meta name="description" content="Currículo informal e portfólio de Eduardo Machado — histórias, experiências, projetos e contato." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#00d4ff; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; --radius:12px; --gap:20px; --fs-hero:clamp(1.6rem, 3.5vw,2.6rem);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #071029 0%, #0b1320 60%); color:#e6eef6; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; padding:40px 20px; line-height:1.5;
+    }
+    .container{max-width:var(--maxw);margin:0 auto;}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6fe7c3);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a}
+    .brand h1{margin:0;font-size:1.05rem}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;font-size:0.95rem}
+    nav a:hover{color:var(--accent)}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:var(--gap)}
+    @media(max-width:980px){main{grid-template-columns:1fr} header{flex-direction:column;align-items:flex-start} .avatar{width:56px;height:56px}}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:var(--radius);padding:18px}
+    .hero{padding:28px;border-radius:var(--radius);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow: 0 6px 30px rgba(2,6,23,0.6)}
+    .hero h2{font-size:var(--fs-hero);margin:0 0 8px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .section{margin-top:18px}
+    .muted{color:var(--muted)}
+
+    /* timeline */
+    .timeline{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .item{display:flex;gap:12px;align-items:flex-start}
+    .item .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
+    .item .content{background:var(--glass);padding:12px;border-radius:10px;flex:1}
+
+    /* two-columns lists */
+    .two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media(max-width:720px){.two-col{grid-template-columns:1fr}}
+
+    /* experiences */
+    .exp-list{display:flex;flex-direction:column;gap:12px}
+    .exp{border-left:3px solid rgba(255,255,255,0.03);padding:12px;background:linear-gradient(180deg,transparent, rgba(255,255,255,0.01));border-radius:10px}
+    .exp h4{margin:0 0 6px}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:0.8rem;color:var(--muted)}
+
+    /* callout */
+    .callout{border-radius:12px;padding:14px;background:linear-gradient(90deg, rgba(0,212,255,0.06), rgba(111,231,195,0.03));color:#e8fbff}
+
+    /* contact */
+    .contact a{display:inline-block;margin-right:8px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--muted)}
+    .contact a:hover{color:var(--accent)}
+
+    footer{margin-top:28px;color:var(--muted);font-size:0.95rem}
+
+    /* small helpers */
+    .kbd{background:rgba(255,255,255,0.03);border-radius:6px;padding:4px 8px;color:var(--muted);font-size:0.85rem}
+
+    /* print placeholders */
+    .prints{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .print{height:120px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.9rem}
+    @media(max-width:980px){.prints{grid-template-columns:repeat(2,1fr)}}
+
+    /* button */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#6fe7c3);color:#04202a;font-weight:600;text-decoration:none}
+
+    /* subtle animations */
+    .fade{animation:fadeIn .6s ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    .copyright-box{margin-top:20px; border-top:1px solid rgba(255,255,255,0.03);text-align:center}
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">EM</div>
+        <div>
+          <h1>Eduardo Machado</h1>
+          <div class="muted">Currículo informal · QA em formação · Tecnologia & Comunicação</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#top">Início</a>
+        <a href="#experiences">Experiências</a>
+        <a href="#story">História</a>
+        <a href="#contact">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="hero card fade" id="top">
+          <h2>Vim de baixo. Aprendi a levantar. <span class="muted">E a ensinar com o exemplo.</span></h2>
+          <p class="muted">Sou Eduardo — estudante de TI, bacharel em Comunicação e faixa azul de jiu-jitsu. Esse site é meu currículo informal: relatos, projetos e a verdade que não cabe numa folha A4.</p>
+
+          <div class="section two-col">
+            <div>
+              <div class="section">
+                <h3>Resumo rápido</h3>
+                <p class="muted">Resiliência, versatilidade e fome de aprender. Experiências em logística, atendimento, fotografia e QA. Buscando oportunidades em tecnologia — especialmente QA, front-end e desenvolvimento web.</p>
+              </div>
+              <div class="section">
+                <h3>Atualmente</h3>
+                <p class="muted">Estudo QA; trabalho em projetos pessoais de web; mantenho freelances de fotografia; e continuo disponível para posições que valorizem crescimento e respeito humano.</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="section callout">
+                <strong>Quer entender mais sobre minha jornada?</strong>
+                <p class="muted" style="margin:8px 0 0">Role a página. O texto é honesto, ácido quando precisa, e sempre profissional.</p>
+              </div>
+
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <a class="btn" href="https://api.WhatsApp.com/send/?phone=5511930056643" target="_blank">Contate-me</a>
+                <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)" href="#story">Ler história completa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiences compact -->
+        <div class="card section fade" id="experiences">
+          <h3>Linha do tempo — experiências</h3>
+          <div class="timeline">
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Entregador de pizza · mochilinha · Atendente de padaria · Lavador de autos</strong>
+                <div class="muted"> Força de vontade — Disciplina e resistência</div>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Auxiliar administrativo · FUNDAP - Fundação do Desenvolvimento Administrativo </strong>
+                <div class="muted">Zeladoria da sala de informatica — Assistente de professores e alunos</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Operador de máquinas · Têxtil</strong>
+                <div class="muted">Ambiente industrial — Disciplina e resistência</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Atendente · Lanchonete (estações)</strong>
+                <div class="muted">Ritmo, atendimento e agilidade</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Agente de processos de negociações · Telemarketing</strong>
+                <div class="muted">Alô! Vamos negociar seus débitos?  </div>
+              </div>
+            </div>
+
+                        <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Balconista de frios · Supermercado</strong>
+                <div class="muted">Higiene rigorosa, conhecimento técnico dos produtos, atendimento ao cliente</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong> Auxiliar de reposição · Drog e Perfumaria</strong>
+                <div class="muted">"Acompanhar" o cliente, da entrada até a saída</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong> De auxiliar geral para Assistente Adm · Empresa Falida</strong>
+                <div class="muted">Acumulo de funções e ameaças é a cultura da empresa</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Atendimento e Gestão de Vendas  · Canil CVE</strong>
+                <div class="muted">Aprendi o amor em toda forma de vida, respeito e cuidado</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Freelancer · Fotografia</strong>
+                <div class="muted">Gravei um instante do tempo em momentos únicos</div>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Motorista · Uber/99/Loggi</strong>
+                <div class="muted">Logística, direção e compromisso</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Assistente de E-commerce · Supy</strong>
+                <div class="muted">Empresa boa, aprendi bastante.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <strong>Engineer software quality · Compass UOL</strong>
+                <div class="muted">Aqui encontrei meu rumo, engenharia de qualidade de software</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Two recent cases -->
+        <div class="card section fade">
+          <h3>As duas experiências recentes</h3>
+          <div class="exp-list">
+            <div class="exp">
+              <h4>1) Contratado e desligado em menos de 1 semana</h4>
+              <p class="muted">Ambiente insalubre, regras rígidas, carga física alta. Tive sintomas e, ao tentar me poupar por saúde, fui desligado. Aprendi a diferença entre trabalho árduo e desumanidade.</p>
+              <div style="margin-top:8px"><span class="tag">Lição:</span> Respeito é requisito, não diferencial. </div>
+            </div>
+
+            <div class="exp">
+              <h4>2) Aprovado, comemorado e substituído</h4>
+              <p class="muted">Passei por um processo seletivo, fui aprovado e recebi data de início. Encarei o processo com responsabilidade — compareci no dia e fui informado que a vaga seguiu com outra pessoa. A administração do processo fala muito sobre a cultura da empresa.</p>
+              <div style="margin-top:8px"><span class="tag">Lição:</span> Comunicação é cultura. <a href="img/alvo.jpg" title="print1" target="_blank">print1</a> - <a href="img/sama.jpg" title="print2" target="_blank">print2</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- life story -->
+        <div class="card section fade" id="story">
+          <h3>Minha história — curto, mas humano</h3>
+          <p class="muted">Perdi minha mãe cedo. Tive desenvolvimento escolar tardio. Trabalhei desde cedo (entregando pizza, lavando carros, tudo que pagava o almoço). Aos 19, segurei minha vida; aos 20, minha tia me deu abrigo para continuar estudando. Desde então, trabalho, estudo e recomeço.</p>
+
+          <div style="margin-top:14px" class="two-col">
+            <div>
+              <h4>Elementos que me moldaram</h4>
+              <ul class="muted">
+                <li>Trabalho duro desde cedo</li>
+                <li>Adaptação a funções diversas</li>
+                <li>Aprendizado prático — fotografia, e-commerce, logística</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Minha base hoje</h4>
+              <ul class="muted">
+                <li>Estudando QA e processos de qualidade</li>
+                <li>Projetos pessoais em web</li>
+                <li>Freelance em fotografia</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4>Portfólio</h4>
+            <p class="muted">Este portfólio exibe minha capacidade de traduzir ideias em soluções visuais eficazes e que geram resultados.</p>
+            <div class="prints">
+              <div class="print"><a href="https://drive.google.com/file/d/1qB6H9vuA74ysZ1InYFcFmWW93JWAqdM_/view?usp=drive_link" title="Portfólio 2019" target="_blank">Portfólio 2019 </a></div>
+              <div class="print"><a href="https://drive.google.com/file/d/1rE3M1eFwmLL8uYGtfPDyIehRQAO9jr3u/view?usp=drive_link" title="Livro personalizado" target="_blank">Livro personalizado</a></div>
+              <div class="print"><a href="img/landingPage.png" title="Meu negocio" target="_blank">Minha Landing Page</a></div>
+              
+            </div>
+            <h4>🗣️ Acadêmicos de T.I, nota - DEZ! </h4>
+            <p class="muted">Sucesso é a combinação de fracassos, erros, começos errados, confusão e da determinação de continuar tentando.</p>
+            <div class="prints">
+              <div class="print"><a href="http://youtube.com/watch?v=5sASGluv-vU" title="" target="_blank">Tem agasalho Aqui! Vídeo </a></div>
+              <div class="print"><a href="img/mapaMental.jpg" title="Mapa mental" target="_blank">Mapa mental </a></div>
+              <div class="print"><a href="/planoDeTeste.md" title="Plano de Testes de Software com Postman" target="_blank">Plano de teste</a></div>
+          </div>
+        </div>
+        
+
+        <!-- values and dreams -->
+        <div class="card section fade">
+          <h3>Valores, desejos e sonhos</h3>
+          <p class="muted">Respeito, sinceridade e trabalho com propósito. Quero subir montanhas, olhar o mar, manter uma vida com dignidade e construir uma startup na área de psicologia no futuro.</p>
+        </div>
+
+        <div class="card fade section">
+          <div class="muted">Este site foi gerado como portfólio <b>informal</b>.</div>
+          <div style="margin-top:8px">Feito com sinceridade e humor ácido.</div>
+        </div>
+
+      </section>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="card fade">
+          <h3>Competências & interesses</h3>
+          <p class="muted">QA · Testes de software · Desenvolvimento Web · WordPress/WooCommerce · Fotografia · Atendimento ao cliente · Logística</p>
+
+          <div class="section">
+            <h4>Busco:</h4>
+            <p class="muted">Posições júnior/estágio em QA, front-end ou desenvolvimento; trabalhos freelance; oportunidades que ofereçam mentoria e respeito.</p>
+          </div>
+
+          <div class="section contact">
+            <h4 id="contact">Contato</h4>
+            <p class="muted">Chamou, respondi!</p>
+            <div style="margin-top:8px">
+              <a href="mailto:eduu.ms@gmail.com" title="Email" target="_blank">✉️ Email</a>
+              <a href="https://www.linkedin.com/in/eduardo-machado-e-silva/" title="LinkedIn" target="_blank">🔗 LinkedIn</a>
+              <a href="https://api.WhatsApp.com/send/?phone=5511930056643" target="_blank" title="Telefone">📱 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card fade section">
+          <h3>Projetos</h3>
+          <div class="muted">
+            <strong> <a href="https://github.com/edu-machado/projeto_loja_eletronicos" target="_blank" title="trabalho escolar">Estokey (controle de estoque) </a></strong>
+            <div>Projeto em Python/Flask com MySQL — funcionalidades básicas de estoque.</div>
+          </div>
+          <div style="margin-top:10px" class="muted">
+            <strong> <a href="https://www.youtube.com/watch?v=5sASGluv-vU&t=2s" target="_blank" title="trabalho escolar"> Agasalho Aqui </a></strong>
+            <div>Projeto social mapear pontos de doação.</div>
+          </div>
+        </div>
+
+        <div class="card fade section">
+          <h3>Extras</h3>
+          <p class="muted">Faixa azul no jiu-jitsu · Motorista com experiência em fretes · Experiência em fotografia comercial · Estágio em Compass UOL.</p>
+        </div>
+      </aside>
+    </main>
+    
+    <footer class="copyright-box">
+      <small class="copyright" alig>© Eduardo Machado - Curriculo informal - 2025</small>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+
+    // Small progressive enhancement: replace placeholder contact links if provided via query params
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const email = params.get('email');
+      const li = params.get('linkedin');
+      const phone = params.get('phone');
+      if(email) document.querySelectorAll('.contact a')[0].href = 'mailto:'+email;
+      if(li) document.querySelectorAll('.contact a')[1].href = li;
+      if(phone) document.querySelectorAll('.contact a')[2].href = 'https://wa.me/'+phone.replace(/\D/g,'');
+    })();
+  </script>
+</body>
+</html>
