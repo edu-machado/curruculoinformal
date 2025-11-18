@@ -361,9 +361,14 @@ Testes executados e documentados são base sólida para futuras validações, ap
 
 ---
 
+![Coleção de teste](img\postman1.png)
+
 ## 17. Registro de Falhas e Bugs
 
 * Registros de falha no tempo de respostas da requisição - tempo de resposta maior que 200 ms.
+
+![Coleção de teste](img\postman2.png)
+![Coleção de teste](img\postman3.png)
 
 ---
 
